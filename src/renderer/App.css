@@ -1,62 +1,214 @@
-/*
- * @NOTE: Prepend a `~` to css file paths that are in your node_modules
- *        See https://github.com/webpack-contrib/sass-loader#imports
- */
+:root {
+  --cor-muito-escura: rgb(51, 47, 44);
+  --cor-escura: rgb(102, 94, 88);
+  --cor-pouco-escura: rgb(153, 141, 132);
+  --cor: rgb(204, 187, 176);
+  --cor-pouco-clara: rgb(217, 204, 196);
+  --cor-clara: rgb(230, 221, 216);
+  --cor-muito-clara: rgb(243, 238, 236);
+  --cor-error: rgb(243, 57, 44);
+  --cor-success: rgb(51, 187, 44);
+  --fonte: serif;
+  --margem-grande: 8px 8px 8px 8px;
+  --margem-pequena: 4px 4px 4px 4px;
+  --padding-texto: 4px 8px 4px 8px;
+  --tamanho-da-fonte: 16px;
+}
+
 body {
-  position: relative;
-  color: white;
-  height: 100vh;
-  background: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
-  font-family: sans-serif;
-  overflow-y: hidden;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  background-color: var(--cor);
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 button {
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  appearance: none;
-  font-size: 1.3rem;
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-  transition: all ease-in 0.1s;
-  cursor: pointer;
-  opacity: 0.9;
+  background-color: var(--cor-muito-escura);
+  color: white;
+  font-family: var(--fonte);
+  font-size: var(--tamanho-da-fonte);
+  height: 32px;
+  margin: var(--margem-grande);
+  padding: var(--padding-texto);
 }
 
 button:hover {
-  transform: scale(1.05);
-  opacity: 1;
+  background-color: var(--cor-escura);
 }
 
-li {
-  list-style: none;
+button:active {
+  background-color: var(--cor-pouco-escura);
 }
 
-a {
-  text-decoration: none;
-  height: fit-content;
-  width: fit-content;
-  margin: 10px;
+h1 {
+  color: black;
+  margin: var(--margem-grande);
+  padding: var(--margem-grande);
+  font-size: 32px;
 }
 
-a:hover {
-  opacity: 1;
-  text-decoration: none;
+h2 {
+  color: black;
+  margin: var(--margem-grande);
+  padding: var(--margem-grande);
+  font-size: 24px;
 }
 
-.Hello {
+img {
+  height: 16px;
+  width: auto;
+}
+
+input {
+  height: 32px;
+  margin: var(--margem-pequena);
+  width: 128px;
+}
+
+label {
+  height: 32px;
+  margin: var(--padding-texto);
+  padding-top: 16px;
+  text-align: right;
+  width: 128px;
+}
+
+p {
+  margin: var(--margem-grande);
+}
+
+table {
+  margin-top: 8px;
+}
+
+thead {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+thead tr td {
+  background-color: var(--cor-clara);
+  color: black;
+}
+
+tbody tr {
+  background-color: white;
+  color: black;
+}
+
+tbody tr:hover {
+  background-color: var(--cor-muito-clara);
+}
+
+td {
+  font-family: var(--fonte);
+  font-size: var(--tamanho-da-fonte);
+  margin: var(--margem-pequena);
+  padding: var(--padding-texto);
+  text-align: center;
+}
+
+.centralized-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  justify-content: center;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.error {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-error);
+  color: white;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 32px);
+  min-width: 100vw;
+}
+
+.large-button {
+  min-width: 128px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--cor-muito-escura);
+  height: 32px;
+  width: 100%;
+}
+
+.menu-item {
+  background-color: var(--cor-muito-escura);
+  color: white;
+  padding: var(--padding-texto);
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: var(--cor-escura);
+}
+
+.menu-item:active {
+  background-color: var(--cor-pouco-escura);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vw;
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.small-button {
+  width: 32px;
+}
+
+.string-field {
+  height: 32px;
+  margin: var(--margem-pequena);
+  width: 256px;
+}
+
+.sucesso {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--cor-success);
+  margin: var(--margem-grande);
+  padding: var(--margem-grande);
+}
+
+.erro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-error);
+  color: white;
+  width: 100vw;
+  height: 100vh;
 }

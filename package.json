@@ -20,17 +20,9 @@
     "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
   },
   "license": "MIT",
-  "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
-  },
+  "author": "Electron React Boilerplate Maintainers <electronreactboilerplate@gmail.com> (https://electron-react-boilerplate.js.org)",
   "contributors": [
-    {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
-    }
+    "Amila Welihinda <amilajack@gmail.com> (https://github.com/amilajack)"
   ],
   "main": "./src/main/main.ts",
   "scripts": {
@@ -96,11 +88,13 @@
     }
   },
   "dependencies": {
+    "@types/react-redux": "^7.1.27",
     "electron-debug": "^3.2.0",
     "electron-log": "^4.4.8",
     "electron-updater": "^6.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
     "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
@@ -247,5 +241,7 @@
       "src/main/**"
     ],
     "logLevel": "quiet"
-  }
+  },
+  "name": "olhinho-2",
+  "version": "1.0.0"
 }

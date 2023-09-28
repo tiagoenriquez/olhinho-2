@@ -51,7 +51,7 @@ const installExtensions = async () => {
   return installer
     .default(
       extensions.map((name) => installer[name]),
-      forceDownload,
+      forceDownload
     )
     .catch(console.log);
 };
@@ -71,9 +71,10 @@ const createWindow = async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 728,
+    width: 800,
+    height: 600,
     icon: getAssetPath('icon.png'),
+    autoHideMenuBar: true,
     webPreferences: {
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')

@@ -1,50 +1,49 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
 import './App.css';
+import { Frame } from 'redux/modules/Frame';
+import { Provider, useSelector } from 'react-redux';
+import store from 'redux/store';
+import Menu from 'containers/Menu';
+import PeriodosFrame from 'frames/PeriodosFrame';
+import DadosFrame from 'frames/DadosFrame';
+import CalcularPeriodoFrame from 'frames/CalcularPeriodoFrame';
+import ExcluirPeriodoFrame from 'frames/ExcluirPeriodoFrame';
+import CalcularDiasFrame from 'frames/CalcularDiasFrame';
+import CalcularNumerosFrame from 'frames/CalcularNumerosFrame';
 
-function Hello() {
-  return (
-    <div>
-      <div className="Hello">
-        <img width="200" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="folded hands">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
-    </div>
-  );
+function Main() {
+  interface Rootstate {
+    frame: Frame;
+  }
+
+  const frame = useSelector((state: Rootstate) => state.frame);
+
+  switch (frame.nome) {
+    case 'calcular-numeros':
+      return <CalcularNumerosFrame />;
+    case 'calcular-periodo':
+      return <CalcularPeriodoFrame />;
+    case 'dados':
+      return <DadosFrame />;
+    case 'excluir':
+      return <ExcluirPeriodoFrame />;
+    case 'multiplicar':
+      return <CalcularDiasFrame operacao="multiplicar" />;
+    case 'periodos':
+      return <PeriodosFrame />;
+    case 'somar':
+      return <CalcularDiasFrame operacao="somar" />;
+    case 'subtrair':
+      return <CalcularDiasFrame operacao="subtrair" />;
+    default:
+      return null;
+  }
 }
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
-    </Router>
+    <Provider store={store}>
+      <Menu />
+      <Main />
+    </Provider>
   );
 }
