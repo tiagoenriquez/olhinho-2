@@ -10,7 +10,6 @@ export default function DadosFrame() {
   }
 
   const periodos = useSelector((state: RootsState) => state.periodos);
-  const titles = ['Propriedade', 'Valor'];
   const list: DadoInterface[] = [
     { chave: 'Total em dias', valor: periodos.periodos.getTotal().toString() },
     { chave: 'Soma', valor: periodos.periodos.getSoma().toString() },
@@ -25,7 +24,7 @@ export default function DadosFrame() {
   return (
     <Frame>
       <h1>Dados do Somatório de Períodos</h1>
-      <Table list={list} titles={titles} />
+      <Table list={list} titles={[]} />
     </Frame>
   );
 }

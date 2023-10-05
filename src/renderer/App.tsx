@@ -9,6 +9,7 @@ import CalcularPeriodoFrame from 'frames/CalcularPeriodoFrame';
 import ExcluirPeriodoFrame from 'frames/ExcluirPeriodoFrame';
 import CalcularDiasFrame from 'frames/CalcularDiasFrame';
 import CalcularNumerosFrame from 'frames/CalcularNumerosFrame';
+import SobreFrame from 'frames/SobreFrame';
 
 function Main() {
   interface Rootstate {
@@ -30,6 +31,8 @@ function Main() {
       return <CalcularDiasFrame operacao="multiplicar" />;
     case 'periodos':
       return <PeriodosFrame />;
+    case 'sobre':
+      return <SobreFrame />;
     case 'somar':
       return <CalcularDiasFrame operacao="somar" />;
     case 'subtrair':

@@ -38,13 +38,15 @@ export default function Table(props: TableProps) {
 
   return (
     <table>
-      <thead>
-        <tr>
-          {tableTitles.map((title) => (
-            <td key={title.key}>{title.name}</td>
-          ))}
-        </tr>
-      </thead>
+      {titles.length === 0 ? (
+        <thead>
+          <tr>
+            {tableTitles.map((title) => (
+              <td key={title.key}>{title.name}</td>
+            ))}
+          </tr>
+        </thead>
+      ) : null}
       <tbody>
         {tableList.map((elements) => (
           <tr key={elements.key}>

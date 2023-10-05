@@ -62,7 +62,7 @@ export default function CalcularDiasFrame(props: CalcularDiasFrameProps) {
       <LargeButton
         action={calcular}
         text={`${operacao.charAt(0).toUpperCase()}${operacao.substring(
-          1
+          1,
         )} na lista`}
       />
     </Frame>

@@ -51,6 +51,12 @@ export default function Menu() {
         text="Resetar"
         tooltip="(F5) Retorna a aplicação para o estado inicial, apagando os períodos da lista."
       />
+      <MenuItem
+        frame="sobre"
+        caractereKey="s"
+        text="Sobre"
+        tooltip="(Atl s) Mostra informações sobre a aplicação"
+      />
     </div>
   );
 }
